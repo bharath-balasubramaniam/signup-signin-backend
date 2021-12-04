@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const dbConnect = () => {
   mongoose
     .connect(
-      `mongodb+srv://bharath:fULXip6ljXbGJ87Y@chat-app-mern.1uidr.mongodb.net/chat-app-mern?retryWrites=true&w=majority`,
+      `${process.env.DB_URL}`,
       {
         useNewUrlParser: true,
         useUnifiedTopology: true,
