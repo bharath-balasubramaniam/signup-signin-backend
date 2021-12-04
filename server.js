@@ -12,7 +12,7 @@ const app = express();
 //schema
 const { User } = require("./models/userModel");
 //port
-const port = process.env.PORT || 90;
+const port = process.env.PORT || 9000;
 //parse your request body into a json format
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -62,7 +62,9 @@ app.post("/user/login", (req, res) => {
     user.generateToken((err, data) => {
       // console.log({ ab: data });
       if (err) return res.status(400).send(err);
-      res.cookie("x_auth", data.token).status(200).json({ loginSucess: true });
+      res.cookie("x_auth", data.token);
+      res.status(200).json({ loginSuccess: true, token: data.token });
+      // res.cookie("x_auth",data.token).send()
     });
   });
 });
@@ -119,11 +121,8 @@ app.post("/user/resetPassword/:str", (req, res) => {
 // if (err) res.sendStatus(500);
 
 app.get("/user/auth", userAuth, (req, res) => {
-  res.status(200).json({
-    login: true,
-  });
+  return res.status(200).json({ login: true });
 });
-app.get("/user/");
 app.get("/user/logout", userAuth, (req, res) => {
   User.findOneAndUpdate({ _id: req.user._id }, { token: "" }, (err) => {
     if (err) return res.json({ success: false, err });

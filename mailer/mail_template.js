@@ -14,7 +14,7 @@ const Hello = () => {
         <div style="padding:0rem; margin:0rem auto; width:300px; height: 300px;">
           <img src="https://stories.freepiklabs.com/storage/19513/forgot-password-amico-1951.png" style="width:100%; height:100%; border-radius: 10px; alt="recover-password">
         </div>
-        <a href="${process.env.CLIENT_SERVER}/reset-password/${randomStr} "target="_blank"  style="font-size: 1rem; padding:0.5rem; border:2px solid black;background-color: transparent;color: grey; border-radius:5px; text-decoration:none;font-family:cursive ; cursor:pointer;">Reset Now</a>
+        <a href=${process.env.client}user/reset-password/${randomStr} "target="_blank"  style="font-size: 1rem; padding:0.5rem; border:2px solid black;background-color: transparent;color: grey; border-radius:5px; text-decoration:none;font-family:cursive ; cursor:pointer;">Reset Now</a>
       </div>
     </body>
   </html>`;
