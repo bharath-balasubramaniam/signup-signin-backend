@@ -1,12 +1,12 @@
 {
-  "name": "signin-signup-nodemailer",
+  "name": "signup-signin-backend",
   "version": "1.0.0",
-  "description": "a login register component",
+  "description": "a signup signin backend code",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "backend": "nodemon server.js"
+    "dev": "nodemon server.js"
   },
   "author": "'Bharath'",
   "license": "ISC",
@@ -22,9 +22,5 @@
     "node": "16.13",
     "nodemailer": "^6.7.2",
     "random-string": "^0.2.0"
-  },
-  "devDependencies": {
-    "concurrently": "^6.4.0",
-    "nodemon": "^2.0.15"
   }
 }
